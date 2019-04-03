@@ -1,5 +1,5 @@
 <package>
-  <name>rs007n_moveit_config</name>
+  <name>khi_rs007n_moveit_config</name>
   <version>1.0.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the rs007n with the MoveIt! Motion Planning Framework
