@@ -19,4 +19,7 @@
   <build_export_depend>gazebo_ros_control</build_export_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_ros_control</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
+  <test_depend>rostest</test_depend>
 </package>

@@ -64,8 +64,15 @@ target_link_libraries(khi_robot_client ${catkin_LIBRARIES} ${krnx_LIBRARIES})
 target_link_libraries(main ${catkin_LIBRARIES} khi_robot_client)
 
 if (CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
+  find_package(catkin REQUIRED COMPONENTS rostest roslaunch)
+  
   add_rostest(tests/test_main.xml)
+  
+  file(GLOB LAUNCH_FILES launch/*.launch)
+  foreach(LAUNCH_FILE ${LAUNCH_FILES})
+    message(status "Testing ${LAUNCH_FILE}")
+    roslaunch_add_file_check(${LAUNCH_FILE})
+  endforeach()
 endif()
 
 install(DIRECTORY launch
